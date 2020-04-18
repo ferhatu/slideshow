@@ -50,35 +50,35 @@ function backwardImg() {
 fwdBtn.addEventListener("click", forwardImg);
 backBtn.addEventListener("click", backwardImg);
 
-let myVar1;
-let myVar2;
+let intervalFwd;
+let intervalBckwd;
 autoFwdBtn.addEventListener("click", function () {
-  myVar1 = setInterval(forwardImg, 1000);
+  intervalFwd = setInterval(forwardImg, 1000);
   backBtn.addEventListener("click", function () {
-    clearInterval(myVar1);
+    clearInterval(intervalFwd);
   });
   fwdBtn.addEventListener("click", function () {
-    clearInterval(myVar1);
+    clearInterval(intervalFwd);
   });
   autoBackBtn.addEventListener("click", function () {
-    clearInterval(myVar1);
+    clearInterval(intervalFwd);
   });
 });
 
 autoBackBtn.addEventListener("click", function () {
-  myVar2 = setInterval(backwardImg, 1000);
+  intervalBckwd = setInterval(backwardImg, 1000);
   backBtn.addEventListener("click", function () {
-    clearInterval(myVar2);
+    clearInterval(intervalBckwd);
   });
   fwdBtn.addEventListener("click", function () {
-    clearInterval(myVar2);
+    clearInterval(intervalBckwd);
   });
   autoFwdBtn.addEventListener("click", function () {
-    clearInterval(myVar1);
+    clearInterval(intervalBckwd);
   });
 });
 
 stopBtn.addEventListener("click", function () {
-  clearInterval(myVar1);
-  clearInterval(myVar2);
+  clearInterval(intervalFwd);
+  clearInterval(intervalBckwd);
 });
